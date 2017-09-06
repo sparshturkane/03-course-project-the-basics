@@ -1,9 +1,11 @@
-<app-header></app-header>
+<app-header (navigationCurrentName)="onNavigationChange($event)"></app-header>
 <div class="container">
     <div class="row">
-        <div class="col-12-md">
-            <app-recipes></app-recipes>
-            <app-shopping-list></app-shopping-list>
+        <div class="col-12-md"  >
+            <app-recipes *ngIf="navigation === 'recipe'"></app-recipes>
+            <app-shopping-list *ngIf="navigation === 'shopping'"></app-shopping-list>
         </div>
     </div>
+
 </div>
+
